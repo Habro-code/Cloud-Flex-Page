@@ -1,0 +1,24 @@
+{
+  "name": "cloud-flex-page",
+  "version": "1.0.0",
+  "description": "Page",
+  "homepage": "https://github.com/Habro-code/Cloud-Flex-Page#readme",
+  "bugs": {
+    "url": "https://github.com/Habro-code/Cloud-Flex-Page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habro-code/Cloud-Flex-Page.git"
+  },
+  "license": "ISC",
+  "author": "Egor",
+  "type": "commonjs",
+  "sourcecls": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "sass": "^1.99.0"
+  }
+}
