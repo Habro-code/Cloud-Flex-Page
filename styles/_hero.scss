@@ -1,0 +1,92 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+@use 'sass:color';
+
+.hero {
+    position: relative;
+    max-width: 1260px;
+    height: 830px;
+    margin: 0 auto;
+    padding: 140px 0 0 0;
+    background: url('../assets/img/cloud_alpha.png') center/contain no-repeat;
+
+    &__content {
+        position: relative;
+        width: 900px;
+        margin: 0 auto;
+
+        .hero__title {
+            @include m.font(120px, 700, v.$color_black);
+            line-height: 1;
+        }
+
+        .hero__action-btn {
+            width: 380px;
+            height: 80px;
+            background-color: v.$color_black;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            @include m.font(28px, 500, v.$color_white);
+            @include m.position(absolute, 1, -1, bottom, right, 18px, -35px);
+
+
+            &:hover {
+                background-color: color.adjust(v.$color_black, $alpha: -0.35);
+
+            }
+        }
+    }
+
+    &__notify {
+        position: relative;
+        margin: 170px auto 0;
+        width: 680px;
+        height: 60px;
+        background-color: color.adjust(v.$color_white, $alpha: -0.85);
+        border-radius: 20px;
+        @include m.d-flex(end, center, nowrap, row, 10px);
+
+        &-img{
+            @include m.position(absolute, 1, -1, top, left, -75px, -45px);
+        }
+
+        &-content{
+            width: 450px;
+            height: 100%;
+            @include m.d-flex();
+            @include m.font(14px, 400, v.$color_black);
+            border-right: 1px solid v.$color_white;
+            line-height: .95;
+        }
+
+        &-btn{
+            width: 118px;
+            background: none;
+            border: none;
+            @include m.font(25px, 400, v.$color_black);
+            @extend %hover-light;
+        }
+    }
+
+    &__scroll{
+        @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+
+        &-content{
+            position: relative;
+            @include m.font(16px, 500, v.$color_white);
+            writing-mode: sideways-rl;
+            cursor: pointer;
+            &::after{
+                @include m.position(absolute, 1, -1, top, left, 100px, 8px);
+                content: "";
+                display: block;
+                width: 1px;
+                height: 75px;
+                background-color: v.$color_white;
+            }
+        }
+    }
+    
+}
